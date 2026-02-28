@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, redirect, session
 import sqlite3
+import os
 from werkzeug.security import generate_password_hash, check_password_hash
 
 app = Flask(__name__)
@@ -158,4 +159,5 @@ def board():
     messages = get_messages()
     return render_template("board.html", messages=messages, user=session["user"])
 
-app.run(debug=True)
+port = int(os.environ.get("PORT", 10000))
+app.run(host="0.0.0.0", port=port)
