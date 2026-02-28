@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h2>Message Board</h2>
+
+<form method="POST">
+    <textarea name="content" rows="3" cols="40"
+              placeholder="Напишіть повідомлення..."></textarea><br>
+    <button>Відправити</button>
+</form>
+
+<hr>
+
+{% for msg in messages %}
+    <div style="margin-bottom:20px; border-bottom:1px solid gray;">
+
+
+        <strong>{{ msg[2] }}</strong>
+        <small>{{ msg[1] }}</small>
+
+        <p>{{ msg[0] }}</p>
+    </div>
+{% endfor %}
+
+
+</body>
+</html>

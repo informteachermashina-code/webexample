@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>Профіль</h2>
+
+<p>Вітаємо, {{ user }}!</p>
+{% if image %}
+<img src = "{{ image }}" width="150">
+{%endif%}
+
+<a href="/edit_profile">Редагувати профіль</a>
+<a href="/login">Вийти</a>
+<a href="/delete">Видалити дані</a>
+
+</body>
+</html>
